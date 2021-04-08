@@ -9,6 +9,10 @@ defmodule Friends.Application do
     children = [
       # Starts a worker by calling: Friends.Worker.start_link(arg)
       # {Friends.Worker, arg}
+
+      # iremos configurar o Friends.Repo como supervisor de nossa árvore de supervisão.
+      # Isso irá iniciar o processo do Ecto assim que nossa aplicação iniciar.
+      Friends.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
